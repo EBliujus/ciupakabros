@@ -122,3 +122,13 @@ else if ($pirkimas <= 2000) {
 } else if ($pirkimas > 2000) {
     echo 'Suma:',$zvake * $pirkimas - ( $pirkimas *$nuolaida2001),'€', '<br/>', 'Zvakiu skaicius:',$pirkimas, 'vnt.','<br/>','Vnt. kaina:',  ($zvake * $pirkimas - ( $pirkimas *$nuolaida2001)) / $pirkimas,'€';
 }
+echo '<br/>';
+echo '---------------------------------------------';
+/* Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. Rezultatus apvalinkite iki sveiko skaičiaus */
+$skaicius1 = rand(0, 100);
+$skaicius2 = rand(0, 100);
+$skaicius3 = rand(0, 100);
+echo '<br/>';
+echo $skaicius1,' ', $skaicius2,' ', $skaicius3;
+echo '<br/>';
+echo 'Vidurkis:', round(($skaicius1 + $skaicius2 + $skaicius3) / 3);
