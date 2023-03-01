@@ -45,7 +45,7 @@ if ($s1 > $s2 && $s1 < $s3) {
 else if ($s2 > $s1 && $s2 < $s3) {
     echo $s2;
 }
-else if ($s3 < $s1 && $s3 > $s2) {
+else if ($s3 > $s1 && $s3 < $s2 && $s3 < $s1) {
     echo $s3;
 }
 echo '<br/>';
@@ -73,6 +73,54 @@ $e= rand(0, 2);
 $r= rand(0, 2);
 echo '<br/>';
 echo $q, ' ', $w, ' ', $e, ' ', $r;
-if ($q == 0 && $w == 0 && $e && == 0 && $r == 0) {
-    
+echo '<br/>';
+echo '---------------------------------------------';
+/* Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage. Pvz skaičius 3- rezultatas: <h3>3</h3> */
+$sk = rand(1, 6);
+echo "<h$sk>$sk</h$sk>";
+echo '<br/>';
+echo '---------------------------------------------';
+/* Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni. */ 
+$sk1 = rand(-10, 10);
+$sk2 = rand(-10, 10);
+$sk3 = rand(-10, 10);
+if ($sk1 < 0) {
+    echo '<h1 style="color:green">'.$sk1.'</h1>';
+} else if ($sk1 == 0) {
+    echo '<h1 style="color:crimson">'.$sk1.'</h1>';
+} else {
+    echo '<h1 style="color:blue">'.$sk1.'</h1>';}
+
+if ($sk2 < 0) {
+    echo '<h1 style="color:green">'.$sk2.'</h1>';
+} else if ($sk2 == 0) {
+    echo '<h1 style="color:crimson">'.$sk2.'</h1>';
+} else {
+    echo '<h1 style="color:blue">'.$sk2.'</h1>';}
+
+if ($sk3 < 0) {
+    echo '<h1 style="color:green">'.$sk3.'</h1>';
+} else if ($sk3 == 0) {
+    echo '<h1 style="color:crimson">'.$sk3.'</h1>';
+} else {
+
+    echo '<h1 style="color:blue">'.$sk3.'</h1>';}
+
+    echo '<br/>';
+    echo '---------------------------------------------';
+/*     Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000. */
+$zvake = 1;
+$zvake1001 = 0.97;
+$zvake2001 = 0.96;
+$pirkimas = rand(5, 3000);
+echo '<br/>';
+echo $pirkimas;
+echo '<br/>';
+if ($pirkimas <= 1000) {
+    echo $zvake * $pirkimas;
+}
+else if ($pirkimas <= 2000) {
+    echo $zvake1001 * $pirkimas;
+} else if ($pirkimas > 2000) {
+    echo $zvake2001 * $pirkimas;
 }
