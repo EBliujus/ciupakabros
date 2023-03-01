@@ -110,17 +110,15 @@ if ($sk3 < 0) {
     echo '---------------------------------------------';
 /*     Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000. */
 $zvake = 1;
-$zvake1001 = 0.97;
-$zvake2001 = 0.96;
+$nuolaida1001 = 0.03;
+$nuolaida2001 = 0.04;
 $pirkimas = rand(5, 3000);
 echo '<br/>';
-echo $pirkimas;
-echo '<br/>';
 if ($pirkimas <= 1000) {
-    echo $zvake * $pirkimas;
+    echo 'Suma:',$zvake * $pirkimas, '€', '<br/>', 'Zvakiu skaicius:',$pirkimas, 'vnt.','<br/>','Vnt. kaina:', $zvake * $pirkimas / $pirkimas,'€';
 }
 else if ($pirkimas <= 2000) {
-    echo $zvake1001 * $pirkimas;
+    echo 'Suma:',$zvake * $pirkimas - ($pirkimas * $nuolaida1001),'€', '<br/>', 'Zvakiu skaicius:',$pirkimas, 'vnt.','<br/>','Vnt. kaina:', ($zvake * $pirkimas - ($pirkimas * $nuolaida1001)) / $pirkimas,'€';
 } else if ($pirkimas > 2000) {
-    echo $zvake2001 * $pirkimas;
+    echo 'Suma:',$zvake * $pirkimas - ( $pirkimas *$nuolaida2001),'€', '<br/>', 'Zvakiu skaicius:',$pirkimas, 'vnt.','<br/>','Vnt. kaina:',  ($zvake * $pirkimas - ( $pirkimas *$nuolaida2001)) / $pirkimas,'€';
 }
