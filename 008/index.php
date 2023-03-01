@@ -3,7 +3,7 @@
 "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)". */
 
 $vardas = 'Evaldas';
-$pavarde = 'Bliujus';
+$pavarde = 'Pavardenis';
 $metai = 1991;
 $data = 2023;
 
