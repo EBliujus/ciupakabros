@@ -166,27 +166,38 @@ echo 'Vidurkis:', round($suma / $count), '<br/>';
 echo '---------------------------------------------', '<br/>';
 /* 10. Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių. */
 
-$valandos = rand(0, 23);
-$minutes = rand(0, 59);
-$sekundes = rand(0, 59);
+// $valandos = rand(0, 23);
+// $minutes = rand(0, 59);
+// $sekundes = rand(0, 59);
+$sek= rand(0, 86400);
 
-echo "Laikrodis: $valandos h $minutes min $sekundes s", '<br/>';
+// echo "Laikrodis: $valandos h $minutes min $sekundes s", '<br/>';
+// echo $sek, '<br/>';
+
 
 $randTime = rand(0, 300);
-echo $randTime, '<br/>' ;
+echo "Pridetos sekundes: $randTime", '<br/>' ;
+$pridetasLaikas = $sek + $randTime;
+// echo $pridetasLaikas, '<br/>';
+$laikas = gmdate("H:i:s",$pridetasLaikas);
+echo gmdate("H:i:s",$sek), '<br/>';
+// echo $randTime, '<br/>';
+echo "Modernus Laikrodis: $laikas", '<br/>' ; 
 
 // echo 'Liekana:', $randTime % 60,'<br/>' ;
-$NewTime = 0;
-echo $NewTime = $valandos * 3600 +  $minutes * 60  + $sekundes + $randTime, '<br/>';
+// $NewTime = 0;
+// echo $NewTime = $valandos * 3600 +  $minutes * 60  + $sekundes + $randTime, '<br/>';
+// $time = gmdate("H:i:s",$NewTime);
+// echo "NaujasLaikrodis: $time", '<br/>';
 // echo $NewHour = $NewTime / 3600,'<br/>' ;
 // echo $NewMinutes = ($NewTime - $NewHour) / 3600, '<br/>';
 // // echo $NewMin= $NewHour % 60,'<br/>' ;
 
-$valanda = floor($NewTime / 3600);
-$minute = floor($NewTime / 60 % 60);
-$sekunde = floor($NewTime % 60);
+// $valanda = floor($NewTime / 3600);
+// $minute = floor($NewTime / 60 % 60);
+// $sekunde = floor($NewTime % 60);
 
-echo "NaujasLaikrodis: $valanda h $minute min $sekunde s", '<br/>' ; 
+// echo "NaujasLaikrodis: $valanda h $minute min $sekunde s", '<br/>' ; 
 
 
 echo '---------------------------------------------', '<br/>';
