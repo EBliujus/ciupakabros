@@ -154,12 +154,12 @@ if ($skaicius1 >= 10 && $skaicius1 <= 90) {
         $suma += $skaicius1; 
 }
 if ($skaicius2 >= 10 && $skaicius2 <= 90) {
-    $count++;
-    $suma += $skaicius2; 
+        $count++;
+        $suma += $skaicius2; 
 }
 if ($skaicius3 >= 10 && $skaicius3 <= 90) {
-    $count++;
-    $suma += $skaicius3; 
+        $count++;
+         $suma += $skaicius3; 
 }
 echo 'Vidurkis:', round($suma / $count), '<br/>';
 
@@ -209,6 +209,13 @@ $ketvirta = rand(1000, 9999);
 $penkta = rand(1000, 9999);
 $sesta = rand(1000, 9999);
 
-$arr = [$pirma,  $antra,  $trecia,  $ketvirta,  $penkta,  $sesta];
-echo max($arr), '<br/>';
-echo "$pirma  $antra  $trecia  $ketvirta  $penkta  $sesta", '<br/>';
+// $arr = [$pirma,  $antra,  $trecia,  $ketvirta,  $penkta,  $sesta];
+// echo max($arr), '<br/>';
+// echo "$pirma  $antra  $trecia  $ketvirta  $penkta  $sesta", '<br/>';
+
+// range($pirma, $sesta );
+// echo range;
+$max = max($pirma, $antra, $trecia, $ketvirta, $penkta, $sesta);
+$min = min($pirma, $antra, $trecia, $ketvirta, $penkta, $sesta);
+$vid = ($pirma + $antra + $trecia + $ketvirta + $penkta + $sesta) - $max - $min;
+
