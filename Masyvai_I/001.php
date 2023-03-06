@@ -7,4 +7,4 @@ for ($i = 0; $i < 30; $i++) {
 
 $array[] = rand(5, 25);
 }
-print_r ($array)
+print_r ($array);

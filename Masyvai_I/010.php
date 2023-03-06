@@ -13,10 +13,16 @@ $num8 = $num6 + $num7;
 $num9 = $num7 + $num8;
 $num10 = $num8 + $num9;
 
-echo $num1, ',', $num2,',', $num3,',', $num4,',', $num5,',' ,$num6,',' ,$num7,',', $num8,',', $num9,',', $num10, '<br/>';
+echo $num1, ', ' ,$num2,', ' ,$num3,', ' ,$num4,', ' ,$num5,', ' ,$num6,', ' ,$num7,', ' ,$num8,', ' ,$num9,', ' ,$num10, '<br/>';
 
-$arr = array($num1, ',', $num2,',', $num3,',', $num4,',', $num5,',' ,$num6,',' ,$num7,',', $num8,',', $num9,',', $num10);
-'<br/>';
-'<pre/>';
-echo implode(" ", $arr);
+echo '<br/>';
+$arr = array($num1, $num2, $num3, $num4, $num5 ,$num6 ,$num7, $num8, $num9, $num10);
+echo '<br/>';
+echo '<pre/>';
+print_r ($arr);
+
+
+// foreach ($arr as $item){
+//     echo $item, '<br/>';
+// }
 

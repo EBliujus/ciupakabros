@@ -7,17 +7,14 @@ for ($i = 0; $i < 30; $i++) {
 
 $array[] = rand(5, 25);
 }
+echo '<pre/>';
 print_r ($array);
 echo '<br/>';
 
-$count = 0;
 $suma = 0;
 
-foreach($array as $item){
-    if ($item % 2 ===0) {
-        $count++;
-        $suma++;
-    }
+for ($i = 0; $i < count($array); $i += 2){
+    $suma += $array[$i];
 }
-echo 'Skaiciu kiekis:', $count , '<br/>';
+
 echo 'Suma:', $suma, '<br/>';

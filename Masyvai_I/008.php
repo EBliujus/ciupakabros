@@ -10,8 +10,11 @@ $array[] = rand(100, 999);
 $array2[] = rand(100, 999);
 }
 // echo '<pre/>';
-print_r (array_unique($array));
+// print_r (array_unique($array));
+// echo '<br/>';
+// print_r (array_unique($array2));;
 echo '<br/>';
-print_r (array_unique($array2));;
-
-$bendri = [element for element in array if element in array2];
+echo '<br/>';
+$bendri = array_intersect($array, $array2);
+echo '<pre/>';
+print_r ($bendri);
