@@ -1,17 +1,9 @@
 <?php
 /* 3. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės. */
 
-// $array = array();
-
-// $letters = ['A', 'B', 'C', 'D'];
-
-// for ($i = 0; $i <= 200; $i++) {
-//     $array = rand($letters, $letters);
-// }
-
-// print_r ($array);
 
 $letters = array();
+
 for ($i = 0; $i < 200; $i++) {
   $letters[] = chr(rand(65, 68));
 }
