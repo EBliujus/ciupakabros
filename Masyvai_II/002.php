@@ -63,3 +63,9 @@ print_r($sum);
 echo '-------------------------------------', '<br/>';
 
 
+foreach ($arr as $value) {
+     $value = array_pad($value, 7, rand(5,25));
+    
+}
+    print_r ($value);
+

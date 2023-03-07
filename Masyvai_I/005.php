@@ -32,3 +32,10 @@ foreach(range(0,199) as $i) {
 };
 
 echo implode(' ',$letters4);
+echo '<br/>';
+
+$stat = array_count_values($letters4);
+$po1 = count(array_keys($stat,1));
+$viso = count($stat);
+
+echo 'Unikaliu:',$po1, 'Viso:', $viso;
