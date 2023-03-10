@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +10,14 @@
     <link rel ="stylesheet" href="./App.scss" >
     <title>002</title>
 </head>
-<body>
+<body >
     <div>
         <button>
             <a href="http://localhost/ciupakabros/web_mech/002/002.php?page=1">I Fonas</a>
         </button>
-        <button>
-            <a href="http://localhost/ciupakabros/web_mech/002/002.php?page=2&color=#62e82e">II Fonas</a>
-        </button>
+        <button>    
+        <a href="http://localhost/ciupakabros/web_mech/002/002.php?page=2&color=#8CFFC7">II Fonas</a>
+    </button>
     </div>
 
 </body>

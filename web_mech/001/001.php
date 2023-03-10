@@ -15,7 +15,7 @@
          <button type="submit">
              <a href="http://localhost/ciupakabros/web_mech/001/001.php?color=1">Red Page</a>
         </button>
-        <?php
+    <?php
 		if(isset($_GET['color']) && $_GET['color'] == 1) {
 			echo "<style>body{background-color: red;}</style>";
 		}
