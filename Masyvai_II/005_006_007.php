@@ -30,7 +30,7 @@ echo '----------------------------', '<br/>';
   echo '-------------------------', '<br/>';
   
   /* 7. Prie 6 uždavinio masyvo antro lygio masyvų pridėkite dar du elementus: name ir surname. Elementus užpildykite stringais iš atsitiktinai sugeneruotų lotyniškų raidžių, kurių ilgiai nuo 5 iki 15. */
-  $names = array();
+/*   $names = array();
   for ($i = 0; $i < 10; $i++) {
       $name = '';
       $length = rand(5, 15);
@@ -52,7 +52,24 @@ for ($i = 0; $i < 10; $i++) {
 // print_r($names);
 // print_r($surnames);
 $arr[$i] = array('name' => $name,'surname' => $surname);
-print_r($arr);
+print_r($arr); */
+
+function randString()
+{
+    $letters = range('a', 'z');
+    $out = '';
+    foreach(range(1, rand(5, 15)) as $_) {
+        $out = $letters[rand(0, count($letters) - 1)];
+    }
+    return $out;
+}
+$users = array(function($users) {
+    $users['name'] = randString();
+    $users['surname'] = randString();
+    return $users;
+}, $users);
+
+print_r ($users);
 
 
 
