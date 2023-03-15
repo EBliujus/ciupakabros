@@ -12,5 +12,9 @@ class Pinigine {
             $this-> popieriniaiPinigai += $kiekis;
         }
     }
-    pub
+    public function suskaiciuoti() {
+        echo 'Metalinai pinigai:' . $this->metaliniaiPinigai . '<br>';
+        echo 'Popieriniai pinigai:' . $this->popieriniaiPinigai . '<br>';
+        echo 'Suma' . ($this->metaliniaiPinigai + $this->popieriniaiPinigai) . '<br>';
+    }
 }
