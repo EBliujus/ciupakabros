@@ -1,4 +1,9 @@
 <?php
+$color = $_GET['color'] ?? '555555';
+
+if (!preg_match('/[\da-f]{6}$/', $color,)) {
+    $color = 'aqua';
+}
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +15,7 @@
     <link rel ="stylesheet" href="./App.scss" >
     <title>002</title>
 </head>
-<body >
+<body style="background-color: #<?= $color ?>;">
     <div>
         <button>
             <a href="http://localhost/ciupakabros/web_mech/002/002.php?page=1">I Fonas</a>
