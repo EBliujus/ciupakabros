@@ -1,13 +1,15 @@
 <?php
 
 require __DIR__ . '/Grybas.php';
+require __DIR__ . '/Krepsys.php';
+
+$krepsys = new Krepsys;
 
 
-$k = new Krepsys();
 
-while ($k->koksDydis() < Krepsys::DYDIS) {
-    $grybas = new Grybas();
-    $k->idetiGryba($grybas);
-}
+while($krepsys->deti(new Grybas)) {}
 
-echo "Surinktas krepšys su {$k->koksDydis()} grybais.";
+
+
+echo '<pre>';
+var_dump();
