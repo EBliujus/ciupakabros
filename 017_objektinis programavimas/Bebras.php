@@ -8,7 +8,7 @@ class Bebras {
     /* jeigu avybej nieko nepriskiriam igauna savybe NULL -> daznai naudojami obj.programavime */
     /* PUBLIC/PRIVATE/PROTECTED */
     /* funkcijos  jei norim if'int viska daryti funkcijoj...*/
-    public $color;
+    private $color;
     // pasileidzia su kiekvienu NEW pavartojimu
     public function __construct()
     {
@@ -26,10 +26,20 @@ class Bebras {
         echo '<h1> ALIO </h1>';
     }
 
+    public function __get($what) 
+    {
+        if($what == color) {
+            return $this->color;
+        }
+        
+    }
 
     public function kokiaTavoSpalva() 
     {
         // return 'Nezinau';
+
         return $this->color;
     }
+
 }
+
