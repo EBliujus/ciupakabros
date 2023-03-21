@@ -12,4 +12,4 @@ while($krepsys->deti(new Grybas)) {}
 
 
 echo '<pre>';
-var_dump();
+var_dump($krepsys);

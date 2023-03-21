@@ -10,9 +10,8 @@ class Krepsys {
         if($grybas->valgomas && !$grybas->sukirmijes) {
             $this->pririnkta += $grybas->svoris;
         }
-
+        
         return $this->dydis > $this->pririnkta;
-
-
+        
     }
 }
