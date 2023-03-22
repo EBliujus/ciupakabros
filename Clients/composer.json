@@ -1,0 +1,17 @@
+{
+    "name": "37067/clients",
+    "description": "Clients DataBase",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "37067\\Clients\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EBliujus",
+            "email": "ev.bliujus@gmail.com"
+        }
+    ],
+    "require": {}
+}
