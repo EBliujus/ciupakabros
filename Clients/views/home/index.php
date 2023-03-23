@@ -2,8 +2,8 @@
 
 <div class="home">
     <h1>HOME
-        <span class="sub letter">
+        <div class="sub letter">
             Clients Managment System
-        </span>
+        </div>
     </h1>
 </div>
