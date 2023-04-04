@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PirmasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/labas', fn() => '<h1 style="color:crimson;">LABAS</h1>');
-Route::get('/labas/krabas', fn() => '<h1 style="color:crimson;">LABAS as KRABAS</h1>');
+Route::get('/labas', fn() => '<h1 style="color:crimson; display:grid; place-items:center;">LABAS</h1>');
+
+Route::prefix('labas')->group(function () {
+
+        Route::get('/briedi', [PirmasController::class, 'hello'])->name('briedis');
+
+        Route::get('/vovere', [PirmasController::class, 'helloV']);
+
+        Route::get('/{animal}', [PirmasController::class, 'helloAnimal']);
+
+        Route::get('/{animal}/{color}/color', [PirmasController::class, 'helloFancy'])->name('giria');
+   
+});
+
+Route::get('/sum/{a}/{b}', [PirmasController::class, 'sum']);
