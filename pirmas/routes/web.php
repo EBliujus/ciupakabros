@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PirmasController;
+use App\Http\Controllers\CalcController as C;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,11 @@ Route::prefix('labas')->group(function () {
         Route::get('/{animal}/{color}/color', [PirmasController::class, 'helloFancy'])->name('giria');
    
 });
+
+Route::get('calc', [C::class, 'show'])->name('show');
+Route::post('calc', [C::class, 'doCalc'])->name('do-calc');
+
+
+
 
 Route::get('/sum/{a}/{b}', [PirmasController::class, 'sum']);
