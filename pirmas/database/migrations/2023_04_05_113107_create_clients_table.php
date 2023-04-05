@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('clients', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name', 100);
             $table->string('surname', 100);
-            $table->bigInteger('personal_id', 11);
+            $table->bigInteger('personal_id')->unsigned()->unique();
             $table->string('bank_acc', 20);
             $table->decimal('balance', $precision = 12, $scale = 2);
             $table->timestamps();

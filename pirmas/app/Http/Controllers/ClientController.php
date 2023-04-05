@@ -17,12 +17,18 @@ class ClientController extends Controller
 
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     public function store(Request $request)
     {
-        //
+        $client = new Client;
+        $client->name = $request->name;
+        $client->surname = $request->surname;
+        // likusi kliento informacija papildyti
+        $client->save();
+        return redirect()->back();
+
     }
 
     public function show(Client $client)
