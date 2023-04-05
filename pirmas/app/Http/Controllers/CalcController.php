@@ -9,7 +9,7 @@ class CalcController extends Controller
 {
     public function show(Request $request)
     {
-        $rez = $request->session()->get('rez');
+        $rez = $request->session()->pull('rez', '');
 
         return view('calc.form', ['rez' => $rez]);
     }
@@ -19,6 +19,9 @@ class CalcController extends Controller
 
         $request->session()->put('rez', $rez);
 
-        return redirect()->back();
+        $request->flash();
+
+
+        return redirect()->back()->with('rez', $rez);
     }
 }

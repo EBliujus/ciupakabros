@@ -40,3 +40,10 @@ Route::post('calc', [C::class, 'doCalc'])->name('do-calc');
 
 
 Route::get('/sum/{a}/{b}', [PirmasController::class, 'sum']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
