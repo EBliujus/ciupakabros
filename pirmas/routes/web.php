@@ -47,7 +47,9 @@ Route::prefix('clients')->name('clients-')->group(function () {
     Route::get('/{client}', [CL::class, 'show'])->name('show');
     Route::get('/edit/{client}', [CL::class, 'edit'])->name('edit');
     Route::put('/edit/{client}', [CL::class, 'update'])->name('update');
-    Route::put('/delete/{client}', [CL::class, 'destroy'])->name('delete');
+    Route::put('clients/delete/{client}', [CL::class, 'destroy'])->name('delete');
+    Route::put('/add-money/{client}', [CL::class, 'addMoney'])->name('add-money');
+    Route::put('/withdraw-money/{client}', [CL::class, 'withdrawMoney'])->name('withdraw-money');
 
 });
 Route::get('/sum/{a}/{b}', [PirmasController::class, 'sum']);

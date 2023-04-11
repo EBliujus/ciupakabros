@@ -17,7 +17,7 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = Client::all()->sortBy('name');
+        $clients = Client::all()->sortBy('surname');
 
         return view('clients.index', [
             'clients' => $clients
@@ -120,4 +120,28 @@ class ClientController extends Controller
             ->with('info', 'Client was deleted');
         }
     }
+    public function addMoney(Request $request, Client $client)
+{
+    $request->validate([
+        'amount' => 'required|numeric|min:0.01',
+    ]);
+
+    $client->balance += $request->amount;
+    $client->save();
+
+    return redirect()->route('clients-show', $client)->with('success', 'Money added successfully.');
+}
+
+public function withdrawMoney(Request $request, Client $client)
+{
+    $request->validate([
+        'amount' => 'required|numeric|min:0.01|max:' . $client->balance,
+    ]);
+
+    $client->balance -= $request->amount;
+    $client->save();
+
+    return redirect()->route('clients-show', $client)->with('success', 'Money withdrawn successfully.');
+}
+
 }

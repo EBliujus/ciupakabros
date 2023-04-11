@@ -46,13 +46,12 @@ h1, th, td,.card-header, .card-body {
         display: flex;
         justify-content: space-around;
     }
-    .myg-container {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        color: #2D3F56;
-    }
+}
+.myg-container {
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 10px;
+    color: #2D3F56;
 }
 
 .container {

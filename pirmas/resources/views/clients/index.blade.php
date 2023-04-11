@@ -15,7 +15,7 @@
                                 <th>Id Nr.</th>
                                 <th>Name</th>
                                 <th>Surname</th>
-                                <th>personal_Id</th>
+                                <th>Personal Id</th>
                                 <th>Account Nr.</th>
                                 <th>Balance</th>
                                 <th></th>
@@ -24,7 +24,7 @@
                         <tbody>  
                             @forelse ($clients as $client) 
                                 <tr>
-                                    <td>{{ $client ->id }}</td>
+                                    <td>{{ $client->id }}</td>
                                     <td>{{ $client->name }}</td>
                                     <td>{{ $client->surname }}</td>
                                     <td>{{ $client->personal_id }}</td>
@@ -35,9 +35,9 @@
                                             <a href="{{route('clients-show', $client)}}" class="btn btn-info">Show</a>
                                             <a href="{{route('clients-edit', $client)}}" class="btn btn-success">Edit</a>
                                             <form action="{{route('clients-delete', $client)}}" method="post">
-                                                <button type="submit" class="btn btn-danger">Delete</button>
                                                 @csrf
-                                                @method('delete')
+                                                @method('put')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                         </div>
                                     </td>
