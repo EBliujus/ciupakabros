@@ -23,24 +23,24 @@
       </tr>
     </tbody>
   </table>
-  <form action="{{ route('clients-add-money', $client) }}" method="POST">
+  <form class="add" action="{{ route('clients-add-money', $client) }}" method="POST">
     @csrf
     @method('PUT')
-    <div class="mb-3">
+    <div class="mb-3 add-money">
         <label class="form-label">Add Money</label>
-        <input type="number" class="form-control" name="amount" value="{{ old('amount') }}" required>
+        <input type="text" class="form-control" name="amount" step="0.01" value="{{ old('amount') }}" required>
     </div>
-    <button type="submit" class="btn btn-success">Add</button>
+    <button type="submit" class="btn btn-success add-btn">Add</button>
 </form>
 
 <!-- Withdraw money form -->
-<form action="{{ route('clients-withdraw-money', $client) }}" method="POST">
+<form class="draw" action="{{ route('clients-withdraw-money', $client) }}" method="POST">
     @csrf
     @method('PUT')
-    <div class="mb-3">
+    <div class="mb-3 withdraw-money">
         <label class="form-label">Withdraw Money</label>
-        <input type="number" class="form-control" name="amount" value="{{ old('amount') }}" required>
+        <input type="text" class="form-control" name="amount" step="0.01" value="{{ old('amount') }}" required>
     </div>
-    <button type="submit" class="btn btn-danger">Withdraw</button>
+    <button type="submit" class="btn btn-danger draw-btn">Withdraw</button>
 </form>
   @endsection
