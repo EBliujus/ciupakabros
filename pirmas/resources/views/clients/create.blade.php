@@ -21,11 +21,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Client ID</label>
-                            <input type="text" class="form-control" name="Client_id">
+                            <input type="text" class="form-control" name="personal_id">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Account Nr.</label>
-                            <input type="text" class="form-control" name="account_nr">
+                            <label hidden class="form-label">Account Nr.</label>
+                            <input hidden type="text" class="form-control" name="iban" value="{{old('')}}">
                         </div>                        
                         <div class="mb-3">
                             <label hidden class="form-label">Balance</label>

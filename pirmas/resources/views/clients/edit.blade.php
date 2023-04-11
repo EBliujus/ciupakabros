@@ -19,11 +19,11 @@
                             <input type="text" class="form-control" name="surname" value="{{$client->surname}}" readonly>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Client Surname</label>
-                            <input type="text" class="form-control" name="personalId" value="{{$client->personalId}}" readonly>
+                            <label class="form-label">Client ID</label>
+                            <input type="text" class="form-control" name="personal_Id" value="{{$client->personal_id}}" readonly>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Client Surname</label>
+                            <label class="form-label">Account Nr.</label>
                             <input type="text" class="form-control" name="iban" value="{{$client->iban}}" readonly>
                         </div>
                         <button style="color:#fff "type="submit" class="btn btn-primary">Edit</button>

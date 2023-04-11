@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-10">
+        <div class="col-12">
             <div class="card mt-5">
                 <div class="card-header">
                     <h1>Client List</h1>
@@ -15,19 +15,19 @@
                                 <th>Id Nr.</th>
                                 <th>Name</th>
                                 <th>Surname</th>
-                                <th>Personal ID</th>
-                                <th>Sąskaitos Nr.</th>
+                                <th>personal_Id</th>
+                                <th>Account Nr.</th>
                                 <th>Balance</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>  
-                            @forelse ($clients as $client) : 
+                            @forelse ($clients as $client) 
                                 <tr>
-                                    <td>{{ $client -> id }}</td>
+                                    <td>{{ $client ->id }}</td>
                                     <td>{{ $client->name }}</td>
                                     <td>{{ $client->surname }}</td>
-                                    <td>{{ $client->personalId }}</td>
+                                    <td>{{ $client->personal_id }}</td>
                                     <td>{{ $client->iban }}</td>
                                     <td>{{ $client->balance }}</td>
                                     <td>
