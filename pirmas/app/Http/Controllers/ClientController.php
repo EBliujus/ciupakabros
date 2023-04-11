@@ -34,6 +34,7 @@ class ClientController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
             'surname' => 'required|min:3',
+            'personal_id' => 'require|min:11',
         ]);
 
         //        $validator->after(function (V $validator) {
@@ -53,8 +54,8 @@ class ClientController extends Controller
         $client->name = $request->name;
         $client->surname = $request->surname; 
         $client->personal_id = $request->personal_id;
-        $client->iban = $request->iban;
-        $client->balance = $request->balance ?? 0;
+        $client->iban = 'LT' . rand(40,60) . 35000 . rand(10000000000,99999999999);;
+        $client->balance = $request->balance;
         // likusi kliento informacija papildyti
         $client->save();
         return redirect()
@@ -106,9 +107,17 @@ class ClientController extends Controller
 
     public function destroy(Client $client)
     {
-        $client->delete();
-        return redirect()
-        ->route('clients-index')
-        ->with('info', 'Client was deleted');
+        if ($client->money != 0) {
+            return redirect()
+            ->back()
+            ->with('warn', 'Cannot delete 
+            client - there is money in account.');
+
+        } else {
+            $client->delete();
+            return redirect()
+            ->route('clients-index')
+            ->with('info', 'Client was deleted');
+        }
     }
 }

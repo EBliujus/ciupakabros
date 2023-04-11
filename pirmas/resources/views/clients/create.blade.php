@@ -13,11 +13,11 @@
                     <form action="{{route('clients-store')}}" method="POST">
                         <div class="mb-3">
                             <label class="form-label">Client Name</label>
-                            <input type="text" class="form-control" name="name" value="{{old(name)}}">
+                            <input type="text" class="form-control" name="name" value="{{old('name')}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Client Surname</label>
-                            <input type="text" class="form-control" name="surname" value="{{old(surname)}}">
+                            <input type="text" class="form-control" name="surname" value="{{old('surname')}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Client ID</label>
