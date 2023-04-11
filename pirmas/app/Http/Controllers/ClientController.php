@@ -107,17 +107,17 @@ class ClientController extends Controller
 
     public function destroy(Client $client)
     {
-        if ($client->money != 0) {
+        if ($client->balance != 0) {
+            // If the client has money, redirect back with a warning message
             return redirect()
-            ->back()
-            ->with('warn', 'Cannot delete 
-            client - there is money in account.');
-
+                ->back()
+                ->with('info', 'Cannot delete client - there is money in account.');
         } else {
+            // If the client has no money, delete the client and redirect to the client index page with a success message
             $client->delete();
             return redirect()
-            ->route('clients-index')
-            ->with('info', 'Client was deleted');
+                ->route('clients-index')
+                ->with('ok', 'Client was deleted');
         }
     }
     public function addMoney(Request $request, Client $client)
@@ -129,7 +129,7 @@ class ClientController extends Controller
     $client->balance += $request->amount;
     $client->save();
 
-    return redirect()->route('clients-show', $client)->with('success', 'Money added successfully.');
+    return redirect()->route('clients-show', $client)->with('ok', 'Money added successfully.');
 }
 
 public function withdrawMoney(Request $request, Client $client)
@@ -141,7 +141,7 @@ public function withdrawMoney(Request $request, Client $client)
     $client->balance -= $request->amount;
     $client->save();
 
-    return redirect()->route('clients-show', $client)->with('success', 'Money withdrawn successfully.');
+    return redirect()->route('clients-show', $client)->with('info', 'Money withdrawn successfully.');
 }
 
 }
