@@ -6,10 +6,14 @@ use App\Models\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+// use Illuminate\Validation\Validator as V;
 
 class ClientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -32,6 +36,11 @@ class ClientController extends Controller
             'surname' => 'required|min:3',
         ]);
 
+        //        $validator->after(function (V $validator) {
+        //     $validator->errors()->add('Fancy', 'Fancy is wrong!');
+        // });
+
+
         if ($validator->fails()) {
             $request-> flash();
             return redirect()
@@ -48,7 +57,9 @@ class ClientController extends Controller
         $client->balance = $request->balance ?? 0;
         // likusi kliento informacija papildyti
         $client->save();
-        return redirect()->route('clients-index');
+        return redirect()
+        ->route('clients-index')
+        ->with('ok', 'New client was created');
 
     }
 
@@ -70,18 +81,34 @@ class ClientController extends Controller
 
     public function update(Request $request, Client $client)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3',
+            'surname' => 'required|min:3',
+        ]);
+
+        if ($validator->fails()) {
+            $request-> flash();
+            return redirect()
+                        ->back()
+                        ->withErrors($validator);
+        }
+
         $client->name = $request->name;
         $client->surname = $request->surname; 
         $client->personal_id = $request->personal_id;
         $client->iban = $request->iban;
         $client->balance = $request->balance;
         $client->save();
-        return redirect()->route('clients-index');
+        return redirect()
+        ->route('clients-index')
+        ->with('ok', 'Client was updated');;
     }
 
     public function destroy(Client $client)
     {
         $client->delete();
-        return redirect()->route('clients-index');
+        return redirect()
+        ->route('clients-index')
+        ->with('info', 'Client was deleted');
     }
 }
