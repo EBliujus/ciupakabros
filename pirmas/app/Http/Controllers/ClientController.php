@@ -34,7 +34,7 @@ class ClientController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
             'surname' => 'required|min:3',
-            'personal_id' => 'required|integer|unique:clients,personal_id|regex:/^([3-6]{1})([0-9]{2})([0-1]{1})([0-9]{1})([0-3]{1})([0-9]{1})([0-9999]{4})$/',
+            'personal_id' => 'required|integer|unique:clients,personal_id|regex:/^([3-6])([0-9]{2})([0-1])([0-9])([0-3])([0-9])([0-9999]{4})$/',
         ]);
 
         //        $validator->after(function (V $validator) {
