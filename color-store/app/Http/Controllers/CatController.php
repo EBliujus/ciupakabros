@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Cat;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCatRequest;
-use App\Http\Requests\UpdateCatRequest;
+
 
 class CatController extends Controller
 {
 
     public function index()
     {
-        //
+        $cats = Cat::all();
+
+        return view('back.cats.index', [
+            'cats' => $cats
+        ]);
     }
 
 
@@ -22,7 +25,7 @@ class CatController extends Controller
     }
 
 
-    public function store(StoreCatRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -39,7 +42,7 @@ class CatController extends Controller
     }
 
 
-    public function update(UpdateCatRequest $request, Cat $cat)
+    public function update(Request $request, Cat $cat)
     {
         //
     }
